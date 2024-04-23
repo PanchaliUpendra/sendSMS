@@ -5,7 +5,8 @@ const { snsClient } = require('./snsClient');
 async function sendSMS(data) {
   try {
     const response = await snsClient.send(new PublishCommand({
-      Message: `lead created by ${data.name}, ${data.id}`,
+      // Message: `lead created by ${data.name}, ${data.id}`,
+      Message:`${data.message}`,
       PhoneNumber: '+919390000682',
     }));
 
