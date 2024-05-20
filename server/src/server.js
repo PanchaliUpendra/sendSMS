@@ -4,9 +4,13 @@ const https = require('https');
 const app = require('./app');
 const PORT = 8000;
 const httpsOptions = {
-    key:fs.readFileSync('/etc/letsencrypt/live/www.message.ultrasorters.com/privkey.pem'),
-    cert:fs.readFileSync('/etc/letsencrypt/live/www.message.ultrasorters.com/cert.pem'),
-    ca:fs.readFileSync('/etc/letsencrypt/live/www.message.ultrasorters.com/chain.pem')
+    key:fs.readFileSync('/admsms/ssl/privkey.pem'),
+    cert:fs.readFileSync('/admsms/ssl/fullchain.pem'),
+    ca:fs.readFileSync('/admsms/ssl/chain.pem')
+    // key:fs.readFileSync('C:/D_copy/Messages/server/src/privkey.pem'),
+    // cert:fs.readFileSync('C:/D_copy/Messages/server/src/fullchain.pem'),
+    // ca:fs.readFileSync('C:/D_copy/Messages/server/src/chain.pem')
+
 }
 const server = https.createServer(httpsOptions,app);
 server.listen(PORT,()=>{

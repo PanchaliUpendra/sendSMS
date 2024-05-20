@@ -7,7 +7,7 @@ async function sendSMS(data) {
     const response = await snsClient.send(new PublishCommand({
       // Message: `lead created by ${data.name}, ${data.id}`,
       Message:`${data.message}`,
-      PhoneNumber: '+919390000682',
+      PhoneNumber: `+91${data.phone}`,
     }));
 
     console.log('SMS sent:', response);
